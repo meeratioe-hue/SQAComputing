@@ -40,6 +40,14 @@ def pointers(gameboard):
         else: 
             square.pointer = 0
 
+def rollDie():
+    return dieResult = random.randint(1,6)
+
+def movePlayer(dieResult, gameboard):
+    newPos = square.position + dieResult
+
+def checkWin():
+    if 
 
 # initialisation
 # setup 1-D array of records (gameboard) here - task 1
