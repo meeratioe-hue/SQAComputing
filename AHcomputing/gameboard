@@ -3,22 +3,50 @@ from dataclasses import dataclass
 class square():
     position : int = 0
     player : str = ''
-    pointer : int = 0
+    pointer : int = 0 # where to move if you land here
 
 def displayBoard(gameboard):
     for row in range(len(gameboard)):
-        print(str(gameboard[row][col].position) + ', ')
+        print(str(gameboard[row].position) + ', ', end='')
     print()
 
 def initPosition(gameboard):
     # task 2
     # write code to set position of each square here
+    for i in range (len(gameboard)):
+        gameboard[i].position = i + 1 
     return gameboard
 
+def pointers(gameboard):
+    for i in range (len(gameboard)):
+        if square.position == 5:
+            square.pointer = 8
+        elif square.position == 12:
+            square.pointer = 10
+        elif square.position == 16:
+            square.pointer = 20
+        elif square.position == 23:
+            square.pointer = 20
+        elif square.position == 27:
+            square.pointer = 29
+        elif square.position == 32:
+            square.pointer = 37
+        elif square.position == 36:
+            square.pointer = 32
+        elif square.position == 45:
+            square.pointer = 48
+        elif square.position == 48:
+            square.pointer = 46
+        else: 
+            square.pointer = 0
+
+
 # initialisation
-
 # setup 1-D array of records (gameboard) here - task 1
+gameboard = [square() for i in range (50)]
 
-displayBoard(gameboard)
+#main programme
+#displayBoard(gameboard)
 gameboard = initPosition(gameboard) # task 2
+gameboard = pointers(gameboard)
 displayBoard(gameboard)
