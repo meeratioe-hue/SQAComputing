@@ -44,8 +44,8 @@ def pointers(gameboard):
 
 #TASK 4
 def rollDie():
-    return random.randint(1,6)
-
+    # return random.randint(1,6) #why is there a line under random? doesn't generate a number 
+    return 5
 #TASK 4 
 def movePlayer(dieResult, currentPos):
     newPos = currentPos + dieResult
@@ -67,4 +67,15 @@ gameboard = [square() for i in range (50)]
 #displayBoard(gameboard)
 gameboard = initPosition(gameboard) #TASK 2
 gameboard = pointers(gameboard) #TASK 3
+
+playerColour = "Blue"
+currentPos = 0
+dieResult = rollDie()
+currentPos = movePlayer(dieResult, currentPos)
+while gameboard[currentPos -1].pointer !=0:
+    currentPos = gameboard[currentPos - 1].pointer 
+gameboard[currentPos-1].player = playerColour    
 displayBoard(gameboard)
+
+print ("Die: ", dieResult)
+print ("player position: ", currentPos)
