@@ -10,13 +10,14 @@ def displayBoard(gameboard):
         print(str(gameboard[row].position) + ', ', end='')
     print()
 
+#TASK 2 
+# write code to set position of each square here
 def initPosition(gameboard):
-    # task 2
-    # write code to set position of each square here
     for i in range (len(gameboard)):
         gameboard[i].position = i + 1 
     return gameboard
 
+# TASK 3 
 def pointers(gameboard):
     for i in range (len(gameboard)):
         if gameboard[i].position == 5:
@@ -39,14 +40,18 @@ def pointers(gameboard):
             gameboard[i].pointer = 46
         else: 
             gameboard[i].pointer = 0
+    return gameboard 
 
+#TASK 4
 def rollDie():
     return random.randint(1,6)
 
+#TASK 4 
 def movePlayer(dieResult, currentPos):
     newPos = currentPos + dieResult
     return newPos 
 
+#TASK 5
 def checkWin(currentPos):
     win = False
     if currentPos == 50:
@@ -55,11 +60,11 @@ def checkWin(currentPos):
     return win 
 
 # initialisation
-# setup 1-D array of records (gameboard) here - task 1
+# setup 1-D array of records (gameboard) here - TASK 1
 gameboard = [square() for i in range (50)]
 
 #main programme
 #displayBoard(gameboard)
-gameboard = initPosition(gameboard) # task 2
-gameboard = pointers(gameboard)
+gameboard = initPosition(gameboard) #TASK 2
+gameboard = pointers(gameboard) #TASK 3
 displayBoard(gameboard)
