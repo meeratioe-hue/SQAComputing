@@ -19,35 +19,40 @@ def initPosition(gameboard):
 
 def pointers(gameboard):
     for i in range (len(gameboard)):
-        if square.position == 5:
-            square.pointer = 8
-        elif square.position == 12:
-            square.pointer = 10
-        elif square.position == 16:
-            square.pointer = 20
-        elif square.position == 23:
-            square.pointer = 20
-        elif square.position == 27:
-            square.pointer = 29
-        elif square.position == 32:
-            square.pointer = 37
-        elif square.position == 36:
-            square.pointer = 32
-        elif square.position == 45:
-            square.pointer = 48
-        elif square.position == 48:
-            square.pointer = 46
+        if gameboard[i].position == 5:
+            gameboard[i].pointer = 8
+        elif gameboard[i].position == 12:
+            gameboard[i].pointer = 10
+        elif gameboard[i].position == 16:
+            gameboard[i].pointer = 20
+        elif gameboard[i].position == 23:
+            gameboard[i].pointer = 20
+        elif gameboard[i].position == 27:
+            gameboard[i].pointer = 29
+        elif gameboard[i].position == 32:
+            gameboard[i].pointer = 37
+        elif gameboard[i].position == 36:
+            gameboard[i].pointer = 32
+        elif gameboard[i].position == 45:
+            gameboard[i].pointer = 48
+        elif gameboard[i].position == 48:
+            gameboard[i].pointer = 46
         else: 
-            square.pointer = 0
+            gameboard[i].pointer = 0
 
 def rollDie():
-    return dieResult = random.randint(1,6)
+    return random.randint(1,6)
 
-def movePlayer(dieResult, gameboard):
-    newPos = square.position + dieResult
+def movePlayer(dieResult, currentPos):
+    newPos = currentPos + dieResult
+    return newPos 
 
-def checkWin():
-    if 
+def checkWin(currentPos):
+    win = False
+    if currentPos == 50:
+        win = True
+    
+    return win 
 
 # initialisation
 # setup 1-D array of records (gameboard) here - task 1
