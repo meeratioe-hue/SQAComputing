@@ -71,13 +71,17 @@ gameboard = pointers(gameboard) #TASK 3
 
 playerColour = "Blue"
 currentPos = 0
-dieResult = rollDie()
-if currentPos + dieResult <= 50: 
-    currentPos = movePlayer(dieResult, currentPos)
-while gameboard[currentPos -1].pointer !=0:
-    currentPos = gameboard[currentPos - 1].pointer 
-gameboard[currentPos-1].player = playerColour 
-displayBoard(gameboard)
+gameOver = False
+while gameOver == False:
+    dieResult = rollDie()
+    if currentPos + dieResult <= 50: 
+        currentPos = movePlayer(dieResult, currentPos)
+    else:
+        gameOver = True
+    while gameboard[currentPos -1].pointer !=0:
+        currentPos = gameboard[currentPos - 1].pointer 
+    gameboard[currentPos-1].player = playerColour 
+    displayBoard(gameboard)
 
-print ("Die: ", dieResult)
-print ("player position: ", currentPos)
+    print ("Die: ", dieResult)
+    print ("player position: ", currentPos)
