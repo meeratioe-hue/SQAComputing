@@ -76,7 +76,7 @@ if currentPos + dieResult <= 50:
     currentPos = movePlayer(dieResult, currentPos)
 while gameboard[currentPos -1].pointer !=0:
     currentPos = gameboard[currentPos - 1].pointer 
-gameboard[currentPos-1].player = playerColour    
+gameboard[currentPos-1].player = playerColour 
 displayBoard(gameboard)
 
 print ("Die: ", dieResult)
