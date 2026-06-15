@@ -1,3 +1,4 @@
+import random 
 from dataclasses import dataclass
 @dataclass
 class square():
@@ -44,11 +45,11 @@ def pointers(gameboard):
 
 #TASK 4
 def rollDie():
-    # return random.randint(1,6) #why is there a line under random? doesn't generate a number 
-    return 5
+    return random.randint(1,6) 
+    
 #TASK 4 
 def movePlayer(dieResult, currentPos):
-    newPos = currentPos + dieResult
+    newPos = currentPos + dieResult 
     return newPos 
 
 #TASK 5
@@ -71,7 +72,8 @@ gameboard = pointers(gameboard) #TASK 3
 playerColour = "Blue"
 currentPos = 0
 dieResult = rollDie()
-if currentPos + dieResult <= 50: currentPos = movePlayer(dieResult, currentPos) #CANT PRESS ENTER??????????????????
+if currentPos + dieResult <= 50: 
+    currentPos = movePlayer(dieResult, currentPos)
 while gameboard[currentPos -1].pointer !=0:
     currentPos = gameboard[currentPos - 1].pointer 
 gameboard[currentPos-1].player = playerColour    
