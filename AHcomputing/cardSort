@@ -35,6 +35,28 @@ def display_cards(cardarray):
         output = output + " : " + str(cardarray[index].value)
         print(output)
 
+def sort_cards(cards):
+    swaps = 0
+    for n in range (len(cards)):
+        position = 0
+    if cards[position].value < cards[position - 1].value:
+        cards[position] = cards[position - 1]
+        swaps = swaps + 1
+        
+    elif cards[position].value == cards[position].value and cards[position].suits:
+        
+
+        
+
+
+
+
+
+
+
+
+
+
 # main program
 cards = [card() for index in range(10)]
 allcards = [card() for index in range(52)]
