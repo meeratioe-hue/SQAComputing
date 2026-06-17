@@ -44,13 +44,13 @@ def sort_cards(cards):
         if cards[position].value < cards[position - 1].value:
             holdACardHere = cards[position]
             cards[position] = cards[position - 1]
-            card[position - 1] = holdACardHere
+            cards[position - 1] = holdACardHere
             swaps = swaps + 1
-        
-        elif cards[position].value == cards[position].value and suits.index(cards[position].suit) < suits.index(cards[position - 1].suit):
+            display_cards(cards) 
+        elif cards[position].value == cards[position - 1].value and suits.index(cards[position].suit) < suits.index(cards[position - 1].suit):
             holdACardHere = cards[position]
             cards[position] = cards[position - 1]
-            card[position - 1] = holdACardHere
+            draw_cards[position - 1] = holdACardHere
             swaps = swaps + 1 
     print ("number of swaps: ", swaps)        
     return cards                                                                                           
@@ -63,5 +63,5 @@ allcards = [card() for index in range(52)]
 allcards = build_deck()
 cards = draw_cards(allcards)
 display_cards(cards)
-cards = sort_cards(card)
+cards = sort_cards(cards)
 display_cards(cards) 
