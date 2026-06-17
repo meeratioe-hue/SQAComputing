@@ -47,11 +47,14 @@ def sort_cards(cards):
             cards[position - 1] = holdACardHere
             swaps = swaps + 1
             display_cards(cards) 
+            print()
         elif cards[position].value == cards[position - 1].value and suits.index(cards[position].suit) < suits.index(cards[position - 1].suit):
             holdACardHere = cards[position]
             cards[position] = cards[position - 1]
             draw_cards[position - 1] = holdACardHere
             swaps = swaps + 1 
+            display_cards(cards)
+            print()
     print ("number of swaps: ", swaps)        
     return cards                                                                                           
 
