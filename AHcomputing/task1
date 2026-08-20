@@ -1,0 +1,48 @@
+@dataclass 
+class movie_ticket:
+    movie_title: str = ''
+    screen_number: int =0
+    seat_number: int = 0
+    time: str = ''
+    date: str = ''
+
+movie_tickets = [movie_ticket() for i in range(5)]
+
+movie_tickets[0].movie_title =("Spider-Man")
+movie_tickets[0].screen_number = 8
+movie_tickets[0].seat_number = ("8J")
+movie_tickets[0].time = ("7:00pm")
+movie_tickets[0].date = ("25/08/2026")
+
+class movie_ticket:
+    def __init__(self): #constructor
+        self.movie_title = ''
+        self.screen_number = 0
+        self.seat_number = 0
+        self.time = ''
+        self.date = ''
+
+    def set_movietitle(self, thismovietitle):
+        self.movie_title = thismovietitle #setter 
+    def get_movietitle(self):
+        return self.movie_title #getter
+
+    def set_screen_number(self, thisscreennumber):
+        self.screen_number = thisscreennumber
+    def get_screen_number(self):
+        return self.screen_number
+    
+    def set_seat_number(self, thisseatnumber):
+        self.seat_number = thisseatnumber
+    def get_seat_number(self):
+        return self.seat_number
+
+    def set_time(self, thistime):
+        self.time = thistime
+    def get_time(self):
+        return self.time
+
+    def set_date(self, thisdate):
+        self.date = thisdate
+    def get_date(self):
+        return self.date
