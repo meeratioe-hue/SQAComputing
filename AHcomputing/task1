@@ -1,20 +1,13 @@
-@dataclass 
-class movie_ticket:
-    movie_title: str = ''
-    screen_number: int =0
-    seat_number: int = 0
-    time: str = ''
-    date: str = ''
+# @dataclass 
+# class movie_ticket:
+#     movie_title: str = ''
+#     screen_number: int =0
+#     seat_number: int = 0
+#     time: str = ''
+#     date: str = ''
 
-movie_tickets = [movie_ticket() for i in range(5)]
 
-movie_tickets[0].movie_title =("Spider-Man")
-movie_tickets[0].screen_number = 8
-movie_tickets[0].seat_number = ("8J")
-movie_tickets[0].time = ("7:00pm")
-movie_tickets[0].date = ("25/08/2026")
-
-class movie_ticket:
+class movie_ticket():
     def __init__(self): #constructor
         self.movie_title = ''
         self.screen_number = 0
@@ -46,3 +39,18 @@ class movie_ticket:
         self.date = thisdate
     def get_date(self):
         return self.date
+
+    def geteverything(self):
+        message = self.date + " - " + self.time + ": Screen " + str(self.seat_number) + "| Seat " + self.screen_number
+        return message
+
+    
+movie_tickets = [movie_ticket() for i in range(5)]
+
+movie_tickets[0].set_movietitle("Spider-Man")
+movie_tickets[0].set_screen_number(8)
+movie_tickets[0].set_seat_number("8J")
+movie_tickets[0].set_time("7:00pm")
+movie_tickets[0].set_date("25/08/2026")
+
+print(movie_tickets[0].get_movietitle(), movie_tickets[0].get_screen_number(), movie_tickets[0].get_seat_number(), movie_tickets[0].get_time(), movie_tickets[0].get_date())
