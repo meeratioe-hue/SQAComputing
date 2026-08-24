@@ -1,3 +1,6 @@
+#Data Structures 1: 1D Array of Records; OOP Class
+
+
 # @dataclass 
 # class movie_ticket:
 #     movie_title: str = ''
