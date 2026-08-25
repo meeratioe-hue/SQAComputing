@@ -23,9 +23,12 @@ for row in range(rows):
     print(printthis)
  
 # TODO 4: count and display the number of free seats
+freeseats = 0
 for row in range(rows):
-    for column in range(columns):
-        if seats[][] == "-":
+    for column in range(column):
+        if seats[row][column] == "-":
             freeseats = freeseats + 1
+
+print("freeseats: ", freeseats)
 
  
