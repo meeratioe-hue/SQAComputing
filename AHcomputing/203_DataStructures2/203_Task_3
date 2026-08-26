@@ -1,6 +1,3 @@
-
-
-
 rows = 4
 cols = 6
 seats = [['' for c in range(cols)] for r in range(rows)]
@@ -25,7 +22,7 @@ for row in range(rows):
 # TODO 4: count and display the number of free seats
 freeseats = 0
 for row in range(rows):
-    for column in range(column):
+    for column in range(cols):
         if seats[row][column] == "-":
             freeseats = freeseats + 1
 

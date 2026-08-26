@@ -1,0 +1,31 @@
+board = [
+	['O', 'X', 'X'],
+	['X', 'X', 'O'],
+	['O', 'O', 'O']
+]
+ 
+for row in range(3):
+	print(board[row])
+ 
+winner = ''
+
+# TODO 1: check rows=
+for row in range(row):
+	if board[row][0] == board[row][1] == board[row][2]:
+		winner = "X"
+	
+# TODO 2: check columns
+# for column in range(row):
+	# if board[0][column] == board[1][column] == board[2][column]== "X":
+    #         winner = "X"
+			
+# TODO 3: check diagonals
+# for column in range(row):
+# 	if board[row][]
+
+# TODO 4: report the result
+if winner == '':
+	print('No winner')
+else:
+    print(winner, 'has won')
+
