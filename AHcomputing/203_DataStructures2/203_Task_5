@@ -12,14 +12,16 @@ for row in range(2):
 
 
 # TODO 1: ask the user for their initials, and a row and column for their seat
-initials = print(input("user initials: "))
-seatwanted = print(input("column: "))
+initials = input("user initials: ")
+rowwanted = int(input("Enter a row, 0 or 1: "))
+columnwanted = int(input("Enter a column, between 0 to 4: "))
 
 # TODO 2: check whether that row and column is free (equal to '')
-
-
 # TODO 3: if it is free, store the initials at that row and column
-
-
 # TODO 4: if it is not free, display an error message and ask again for a row and column
+while seat[rowwanted][columnwanted] != "":
+    print("This seat is taken.")
+    rowwanted = int(input("Enter a row, 0 or 1: "))
+    columnwanted = int(input("Enter a column, between 0 to 4: "))
 
+seat[rowwanted][columnwanted] = initials
