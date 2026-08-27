@@ -1,7 +1,7 @@
 board = [
-	['O', 'X', 'X'],
-	['X', 'X', 'O'],
-	['O', 'O', 'O']
+	['X', 'O', 'X'],
+	['O', 'X', 'O'],
+	['O', 'X', 'X']
 ]
  
 for row in range(3):
@@ -10,18 +10,18 @@ for row in range(3):
 winner = ''
 
 # TODO 1: check rows=
-for row in range(row):
+for row in range(3):
 	if board[row][0] == board[row][1] == board[row][2]:
-		winner = "X"
+		winner = board[row][0]
 	
 # TODO 2: check columns
-# for column in range(row):
-	# if board[0][column] == board[1][column] == board[2][column]== "X":
-    #         winner = "X"
+for column in range(3):
+	if board[0][column] == board[1][column] == board[2][column]:
+        	winner = board[0][column]
 			
 # TODO 3: check diagonals
-# for column in range(row):
-# 	if board[row][]
+if board[0][0] == board[1][1] == board[2][2]:
+	winner = board[0][0]
 
 # TODO 4: report the result
 if winner == '':
