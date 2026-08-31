@@ -11,6 +11,10 @@ for r in range(len(marks)):
 	print(students[r], marks[r])
  
 # TODO 1: average mark per student
+for r in range(len(marks)):
+	total =0
+	for c in range(len(marks[r])):
+		total = total +
  
 # TODO 2: average mark per test (per column)
  
