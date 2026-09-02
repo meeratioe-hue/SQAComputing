@@ -14,11 +14,20 @@ for r in range(len(marks)):
 for r in range(len(marks)):
 	total =0
 	for c in range(len(marks[r])):
-		total = total +
+		total = total + marks[r][c]
+	print("average mark per student: ", total/4)
  
 # TODO 2: average mark per test (per column)
- 
+for c in range(len(marks[r])):
+	avgpertest = 0
+	for r in range (len(marks)):
+		avgpertest = avgpertest + marks[r][c]
+	print("average mark per test: ", avgpertest/5)
+
 # TODO 3: highest mark, student and test
+highest_mark =marks[0][0]
+for r in range (len(marks)):
+	
  
 # TODO 4: lowest mark, student and test
 
