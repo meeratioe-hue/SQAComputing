@@ -1,3 +1,7 @@
+# 2D Array Basics
+# Classroom Seating Plan 
+
+
 rows = 4
 cols = 6
 seats = [['' for c in range(cols)] for r in range(rows)]

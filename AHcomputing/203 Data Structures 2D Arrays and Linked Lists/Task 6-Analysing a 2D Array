@@ -1,3 +1,6 @@
+# Analysing a 2D Array
+#Exam Marks Grid
+
 students = ['Ali', 'Bea', 'Cal', 'Dee', 'Eve']
 marks = [
 	[14, 16, 12, 18],
@@ -27,7 +30,6 @@ for c in range(len(marks[r])):
 # TODO 3: highest mark, student and test
 highest_mark =marks[0][0]
 for r in range (len(marks)):
-	
+
  
 # TODO 4: lowest mark, student and test
-

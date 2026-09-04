@@ -1,3 +1,6 @@
+# Searching a 2D Array
+# Noughts and Crosses Winner Check
+
 board = [
 	['X', 'O', 'X'],
 	['O', 'X', 'O'],
