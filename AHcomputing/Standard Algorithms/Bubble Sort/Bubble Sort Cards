@@ -47,28 +47,22 @@ def suit_value(card):
 swaps = 0
         
 def sort_cards(cards, swaps):
-    for i in range (1,len(cards)): # tsrats at 2nd card
-        THEcard = cards[i] # THEcard is what i want to insert into the right place
-        position = i
+    for outer in range (len(cards)-1,0,-1):
+        for inner in range(outer):
+        #compare two adjacent values
+            if cards[inner].value >cards[inner+1].value: 
+                temp = cards[inner]
+                cards[inner] = cards[inner+1]
+                cards[inner+1] = temp
+                swaps = swaps +1
 
-
-        while position>0 and (
-            (cards[position -1].value > THEcard.value) or 
-            (cards[position -1].value == THEcard.value and suit_value(cards[position -1]) >suit_value(THEcard))
-            ):
-            #if prev card is bigger, move right and if they are equal, compare suits
-            holdACardHere = cards[position] # temp store card at position
-            cards[position] = cards[position - 1]# move the card front 
-            cards[position - 1] = holdACardHere # put the stored card behind it 
-            swaps = swaps + 1 
-            display_cards(cards) #remove line 61&62 to get rid of every swap printed
-            print() #prints every swap
-            position = position - 1 #move position 1 to the left
-        cards[position] = THEcard # palces THEcard in the final position 
+            elif cards[inner].value ==cards[inner+1].value and suit_value(cards[inner]) > suit_value(cards[inner+1]):
+                temp = cards[inner]
+                cards[inner] = cards[inner+1]
+                cards[inner+1] = temp
+                swaps = swaps +1
     print ("NUMBER OF SWAPSSSS: ", swaps)        
-    return cards                                                                                           
-
-
+    return cards                                                                                        
 
 # main program
 cards = [card() for index in range(10)]
