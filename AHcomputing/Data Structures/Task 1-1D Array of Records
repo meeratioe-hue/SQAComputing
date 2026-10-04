@@ -1,0 +1,20 @@
+#Data Structures 1: 1D Array of Records
+
+from dataclasses import dataclass
+@dataclass
+class moviet_ticket():
+    movie_title: str = ''
+    screen_number: int =0
+    seat_number: int = 0
+    time: str = ''
+    date: str = ''
+
+movietickets = [moviet_ticket() for i in range(5)]
+
+movietickets[0].movie_title = "Spider-Man"
+movietickets[0].screen_number = "8"
+movietickets[0].seat_number = "8J"
+movietickets[0].time = "7:00pm"
+movietickets[0].date ="25/08/2026"
+
+print(movietickets[0])
