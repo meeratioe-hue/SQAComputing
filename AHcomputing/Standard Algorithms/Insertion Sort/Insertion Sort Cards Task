@@ -1,0 +1,81 @@
+from dataclasses import dataclass
+import random
+@dataclass
+class card():
+    # this is a record with 2:suit, value
+    suit : str = ''
+    value : int = 0
+
+def build_deck():
+    # taken from card sort
+    thesecards = [card() for index in range(52)] # makes 52 cards
+    suits = ['hearts', 'clubs','diamonds','spades']
+    count = 0
+    for s in range(0,4):
+        for index in range(1,14):
+            thesecards[count].suit = suits[s]
+            thesecards[count].value = index
+            count += 1
+    return thesecards
+
+def draw_cards(thesecards):
+     # taken from card sort
+    dealtcards = [card() for index in range(10)] #gives 10 cards
+    selectednums = [] # keeps track of which cards have been taken dy
+    # pick 10 to return
+    for index in range(10):
+        selectednum = random.randint(1,52)
+        while selectednum in selectednums:
+            selectednum = random.randint(0,51)
+        selectednums.append(selectednum)
+        dealtcards[index] = thesecards[selectednum]
+    return dealtcards
+
+def display_cards(cardarray):
+     # taken from card sort
+    for index in range(len(cardarray)):
+        output = cardarray[index].suit
+        output = output + " : " + str(cardarray[index].value)
+        print(output)
+
+def suit_value(card):
+    #converts suits into numbers 
+    suits=["spades", "clubs", "hearts", "diamonds"]
+    return suits.index(card.suit)
+
+#------------------------------------------------------------------------------------#
+swaps = 0
+        
+def sort_cards(cards, swaps):
+    for i in range (1,len(cards)): # tsrats at 2nd card
+        THEcard = cards[i] # THEcard is what i want to insert into the right place
+        position = i
+
+
+        while position>0 and (
+            (cards[position -1].value > THEcard.value) or 
+            (cards[position -1].value == THEcard.value and suit_value(cards[position -1]) >suit_value(THEcard))
+            ):
+            #if prev card is bigger, move right and if they are equal, compare suits
+            holdACardHere = cards[position] # temp store card at position
+            cards[position] = cards[position - 1]# move the card front 
+            cards[position - 1] = holdACardHere # put the stored card behind it 
+            swaps = swaps + 1 
+            display_cards(cards) #remove line 61&62 to get rid of every swap printed
+            print() #prints every swap
+            position -= 1 #move position 1 to the left
+        cards[position] = THEcard # palces THEcard in the final position 
+    print ("NUMBER OF SWAPSSSS: ", swaps)        
+    return cards                                                                                           
+
+
+
+# main program
+cards = [card() for index in range(10)]
+allcards = [card() for index in range(52)]
+allcards = build_deck()
+
+cards = draw_cards(allcards)
+display_cards(cards)
+cards = sort_cards(cards,swaps)
+display_cards(cards)
