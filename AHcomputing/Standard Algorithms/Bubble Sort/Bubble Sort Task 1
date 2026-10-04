@@ -4,7 +4,7 @@
 
 myList = ["G","X","b","P", "z"]
 
-
+swaps = 0 
 #start from the right
 for outer in range (len(myList)-1,0,-1):
  for inner in range(outer):
@@ -16,7 +16,9 @@ for outer in range (len(myList)-1,0,-1):
      myList[inner] = myList[inner+1]
      #replace with the temp value
      myList[inner+1] = temp
+     swaps = swaps +1
   
 print("Bubble sort complete")
+print("NUMBER OF SWAPS MADE: ", swaps)
 print(myList)
 
