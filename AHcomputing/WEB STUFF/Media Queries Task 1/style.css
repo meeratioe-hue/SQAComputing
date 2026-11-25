@@ -1,0 +1,27 @@
+.example1,
+.example2,
+.example3 {
+    display: none;
+}
+
+/* Desktop */
+@media screen and (min-width: 1000px) {
+  .example1 {
+    display:block;
+    color: #de0909;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 999px){
+  .example2 {
+    display:block;
+    color: #09de29;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .example3 {
+    display:block;
+    color: #2209de;
+  }
+}
