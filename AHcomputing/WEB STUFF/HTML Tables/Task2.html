@@ -1,10 +1,19 @@
-<!-- Lesson 1602: Task 2. iLoveFooty GET Form -->
+<!--esson 1602: Task 2. iLoveFooty GET Form -->
 
 <!-- Create the HTML to show the iLoveFooty form. You must use table and form elements. -->
 
-<form action =""method = "GET">
+<html> <!-- lines 5 to 12 is to make the width of the first column wider-->
+    <head>
+        <style>
+            .firstcolumn {
+                width: 100px;
+            }
+        </style>
+    </head>
+
+<form action =""method = "POST"> <!--can be POST or GET-->
     <table border = "1">
-        <tr><td>Title </td><td>
+        <tr><td class="firstcolumn">Title </td><td>
         <select name="title">
             <option value = "footy">iLoveFooty</option>
             <option value = "rugby">iLoveRugby</option>
@@ -26,7 +35,13 @@
             <option value = "5">5</option>
         </select>
         </td></tr>
-        
-        <tr><td></td><td></td></tr>
+
+        <tr><td colspan="2">
+            <center>
+                <input type = "submit">
+            </center>
+        </td></tr>
     </table>
 </form>
+
+</html>
